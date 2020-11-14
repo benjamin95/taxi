@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Détail course</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ course?.client }}</ion-card-title>
+      <ion-card-subtitle>{{ course?.type }} du {{date_format}}</ion-card-subtitle>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1 class="ion-text-center">{{course?.prix}} €</h1>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-button fill="outline" expand="block" (click)="deleteCourse(course.id, course.client)"> Supprimer la course </ion-button>
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nouvelle course</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="createCourseForm" (submit)="createCourse()">
+    <ion-item>
+      <ion-label position="stacked">Client</ion-label>
+      <ion-input
+              formControlName="client"
+              type="text"
+              placeholder="Nom du client"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Date</ion-label>
+      <ion-datetime minuteValues="0,15,30,45" formControlName="date" displayFormat="DD, MMM YY HH:mm"></ion-datetime>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Prix</ion-label>
+      <ion-input
+              formControlName="prix"
+              type="number"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Type</ion-label>
+      <ion-textarea
+              formControlName="type"
+              type="text"
+              placeholder="Type de la course"
+      >
+      </ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="!createCourseForm.valid">
+      Ajouter la course
+    </ion-button>
+  </form>
+</ion-content>
